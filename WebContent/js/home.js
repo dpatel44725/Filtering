@@ -49,3 +49,57 @@ $(document).ready(function () {
         
     }).first().change()
 });
+
+// Context menu
+
+$(function(){
+    $('tbody').contextMenu({
+        selector: 'tr', 
+        callback: function(key, options) {
+            var m = "clicked: " + key + " on " + $(this).text();
+            window.console && console.log(m) || alert(m); 
+        },
+        items: {
+            "edit": {name: "Edit", icon: "edit"},
+            "cut": {name: "Cut", icon: "cut"},
+            "copy": {name: "Copy", icon: "copy"},
+            "paste": {name: "Paste", icon: "paste"},
+            "delete": {name: "Delete", icon: "delete"},
+            "sep1": "---------",
+            "quit": {name: "Quit", icon: function($element, key, item){ return 'context-menu-icon context-menu-icon-quit'; }}
+        }
+    });
+});
+
+// change css
+/*$("#dark").click(function () {
+    $("#dark").removeClass("navbar-inverse");
+    $(this).addClass("navbar-default");    
+    alert("hello");
+});*/
+$(document).ready(function() {
+	$("#light").click(function() {
+		$("#navbar").removeClass("navbar-inverse").addClass("navbar-default");
+		$("#table-header").removeClass("thead-dark").addClass("thead-light");
+	});
+	$("#dark").click(function() {
+		$("#navbar").removeClass("navbar-default").addClass("navbar-inverse");
+		$("#table-header").removeClass("thead-light").addClass("thead-dark");
+	});
+	$('#table1').DataTable({
+		"searching" : false,
+		"paging" : false,
+		"info" : false,
+		"dom" : 'Zlfrtip',
+		fixedHeader : true,
+		"colResize" : {
+			"tableWidthFixed" : false
+		},
+		dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+	});
+
+});
+

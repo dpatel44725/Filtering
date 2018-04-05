@@ -2,76 +2,97 @@
 <html>
 <head>
 
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/jquery.contextMenu.min.css"
+	type="text/css">
+<link rel="stylesheet" href="css/home.css" type="text/css">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/tablesorter.js"></script>
 <script src="js/home.js"></script>
+<script src="js/jquery.contextMenu.min.js"></script>
+<script src="js/jquery.ui.position.js"></script>
+
+<link rel="stylesheet" type="text/css"
+	href="DataTables/datatables.min.css" />
+<script type="text/javascript" src="DataTables/datatables.min.js"></script>
+<script type="text/javascript" src="DataTables/datatables.colResize.js"></script>
+<script type="text/javascript"
+	src="DataTables/datatables.fixedHeader.min.js"></script>
+<script src="DataTables/Buttons-1.5.1/js/buttons.html5.min.js"></script>
+<link rel="stylesheet" type="text/css" href="DataTables/Buttons-1.5.1/css/buttons.bootstrap.min.css">
+
 </head>
 <body>
 	<div>
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed"
-						data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-						aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span> <span
-							class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">Home</a>
-				</div>
+		<nav class="nav navbar-inverse" id="navbar">
+
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+
+				<a class="navbar-brand" href="#">Home</a>
+
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse"
-					id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown" role="button" aria-haspopup="true"
-							aria-expanded="false">State <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="#" class="small" data-value="working"
-									tabIndex="-1"><input type="checkbox" value="Working" checked="checked"/>&nbsp;Working</a></li>
-								<li><a href="#" class="small" data-value="backOffice"
-									tabIndex="-1"><input type="checkbox" value="Back Office"/>&nbsp;Back Office</a></li>
-								<li><a href="#" class="small" data-value="ready"
-									tabIndex="-1"><input type="checkbox" value="Ready"/>&nbsp;Ready</a></li>
-							</ul></li>
-					</ul>
-					
-						<form class="navbar-form navbar-left">
-						<div class="btn-group">
-								<button type="button" class="btn btn-success btn-filter" data-target="backOffice">Back Office</button>
-								<button type="button" class="btn btn-warning btn-filter" data-target="ready">Ready</button>
-								<button type="button" class="btn btn-danger btn-filter" data-target="working">Working</button>
-								<button type="button" class="btn btn-default btn-filter" data-target="all">All</button>
-							</div>
-						<div class="form-group">
-							<input type="text" id="myInput" class="form-control"
-								placeholder="Search">
-						</div>
-					</form>
-					
-				</div>
-			</div>
-		</nav>
 
+				<ul class="nav navbar-nav">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">State <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#" class="small" data-value="working"
+								tabIndex="-1"><input type="checkbox" value="Working"
+									checked="checked" />&nbsp;Working</a></li>
+							<li><a href="#" class="small" data-value="backOffice"
+								tabIndex="-1"><input type="checkbox" value="Back Office" />&nbsp;Back
+									Office</a></li>
+							<li><a href="#" class="small" data-value="ready"
+								tabIndex="-1"><input type="checkbox" value="Ready" />&nbsp;Ready</a></li>
+						</ul></li>
+				</ul>
+
+				<form class="navbar-form navbar-left">
+					<div class="btn-group">
+						<button type="button" class="btn btn-success btn-filter"
+							data-target="backOffice">Back Office</button>
+						<button type="button" class="btn btn-warning btn-filter"
+							data-target="ready">Ready</button>
+						<button type="button" class="btn btn-danger btn-filter"
+							data-target="working">Working</button>
+						<button type="button" class="btn btn-default btn-filter"
+							data-target="all">All</button>
+					</div>
+					<div class="form-group">
+						<input type="text" id="myInput" class="form-control"
+							placeholder="Search">
+					</div>
+				</form>
+				<ul class="nav navbar-nav">
+					<li><a href="#">Link</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">Theme <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a id="dark">Dark</a></li>
+							<li><a id="light">Light</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">Separated link</a></li>
+						</ul></li>
+				</ul>
+			</div>
+
+		</nav>
 	</div>
-	<div class="container">
-		<span class="table-add float-right mb-3 mr-2"><a href="#!"
-			class="text-success"><i class="fa fa-plus fa-2x"
-				aria-hidden="true"></i></a></span>
-				
+
+	<div class="container card">
+
 		<!--Table-->
-		<table class="tablesorter table table-hover" id="table1">
+		<table class="table table-hover table-bordered context-menu-one"
+			id="table1">
 
 			<!--Table head-->
-			<thead>
+			<thead class="thead-dark" id="table-header">
 				<tr>
 					<th>#</th>
 					<th>Ticket</th>
@@ -81,6 +102,20 @@
 					<th>Quantity</th>
 					<th>Price</th>
 					<th>State</th>
+					<th>AeSplit</th>
+					<th>AllocationId</th>
+					<th>Good/Bad</th>
+					<th>Book</th>
+					<th>BookId</th>
+					<th>Settle Date</th>
+					<th>Exp. date</th>
+					<th>Company</th>
+					<th>Good/Bad</th>
+					<th>Book</th>
+					<th>BookId</th>
+					<th>Settle Date</th>
+					<th>Exp. date</th>
+					<th>Company</th>
 				</tr>
 			</thead>
 			<!--Table head-->
@@ -96,6 +131,20 @@
 					<td>1000</td>
 					<td>102.43</td>
 					<td class="status">Working</td>
+					<th>1</th>
+					<td>100</td>
+					<td>GOOD</td>
+					<td>TEST</td>
+					<td>100</td>
+					<td>1st Jan 2018</td>
+					<td>3rd May 2018</td>
+					<td>APPLE</td>
+					<td>GOOD</td>
+					<td>TEST</td>
+					<td>100</td>
+					<td>1st Jan 2018</td>
+					<td>3rd May 2018</td>
+					<td>APPLE</td>
 				</tr>
 				<tr data-status="backOffice">
 					<th scope="row">2</th>
@@ -106,6 +155,20 @@
 					<td>100</td>
 					<td>12.43</td>
 					<td class="status">Back Office</td>
+					<th>1</th>
+					<td>100</td>
+					<td>GOOD</td>
+					<td>TEST</td>
+					<td>100</td>
+					<td>1st Jan 2018</td>
+					<td>3rd May 2018</td>
+					<td>APPLE</td>
+					<td>GOOD</td>
+					<td>TEST</td>
+					<td>100</td>
+					<td>1st Jan 2018</td>
+					<td>3rd May 2018</td>
+					<td>APPLE</td>
 				</tr>
 				<tr data-status="ready">
 					<th scope="row">3</th>
@@ -116,13 +179,246 @@
 					<td>1000000</td>
 					<td>92.43</td>
 					<td class="status">Ready</td>
+					<th>1</th>
+					<td>100</td>
+					<td>GOOD</td>
+					<td>TEST</td>
+					<td>100</td>
+					<td>1st Jan 2018</td>
+					<td>3rd May 2018</td>
+					<td>APPLE</td>
+					<td>GOOD</td>
+					<td>TEST</td>
+					<td>100</td>
+					<td>1st Jan 2018</td>
+					<td>3rd May 2018</td>
+					<td>APPLE</td>
+				</tr>
+				<tr data-status="working">
+					<th scope="row">4</th>
+					<td>100</td>
+					<td>B</td>
+					<td>AAPL</td>
+					<td>BOFA</td>
+					<td>1000</td>
+					<td>102.43</td>
+					<td class="status">Working</td>
+					<th>1</th>
+					<td>100</td>
+					<td>GOOD</td>
+					<td>TEST</td>
+					<td>100</td>
+					<td>1st Jan 2018</td>
+					<td>3rd May 2018</td>
+					<td>APPLE</td>
+					<td>GOOD</td>
+					<td>TEST</td>
+					<td>100</td>
+					<td>1st Jan 2018</td>
+					<td>3rd May 2018</td>
+					<td>APPLE</td>
+				</tr>
+				<tr data-status="backOffice">
+					<th scope="row">5</th>
+					<td>101</td>
+					<td>B</td>
+					<td>AA</td>
+					<td>CHASE</td>
+					<td>100</td>
+					<td>12.43</td>
+					<td class="status">Back Office</td>
+					<th>1</th>
+					<td>100</td>
+					<td>GOOD</td>
+					<td>TEST</td>
+					<td>100</td>
+					<td>1st Jan 2018</td>
+					<td>3rd May 2018</td>
+					<td>APPLE</td>
+					<td>GOOD</td>
+					<td>TEST</td>
+					<td>100</td>
+					<td>1st Jan 2018</td>
+					<td>3rd May 2018</td>
+					<td>APPLE</td>
+				</tr>
+				<tr data-status="ready">
+					<th scope="row">6</th>
+					<td>103</td>
+					<td>S</td>
+					<td>BMW</td>
+					<td>BERKLY</td>
+					<td>1000000</td>
+					<td>92.43</td>
+					<td class="status">Ready</td>
+					<th>1</th>
+					<td>100</td>
+					<td>GOOD</td>
+					<td>TEST</td>
+					<td>100</td>
+					<td>1st Jan 2018</td>
+					<td>3rd May 2018</td>
+					<td>APPLE</td>
+					<td>GOOD</td>
+					<td>TEST</td>
+					<td>100</td>
+					<td>1st Jan 2018</td>
+					<td>3rd May 2018</td>
+					<td>APPLE</td>
+				</tr>
+				<tr data-status="working">
+					<th scope="row">7</th>
+					<td>100</td>
+					<td>B</td>
+					<td>AAPL</td>
+					<td>BOFA</td>
+					<td>1000</td>
+					<td>102.43</td>
+					<td class="status">Working</td>
+					<th>1</th>
+					<td>100</td>
+					<td>GOOD</td>
+					<td>TEST</td>
+					<td>100</td>
+					<td>1st Jan 2018</td>
+					<td>3rd May 2018</td>
+					<td>APPLE</td>
+					<td>GOOD</td>
+					<td>TEST</td>
+					<td>100</td>
+					<td>1st Jan 2018</td>
+					<td>3rd May 2018</td>
+					<td>APPLE</td>
+				</tr>
+				<tr data-status="backOffice">
+					<th scope="row">8</th>
+					<td>101</td>
+					<td>B</td>
+					<td>AA</td>
+					<td>CHASE</td>
+					<td>100</td>
+					<td>12.43</td>
+					<td class="status">Back Office</td>
+					<th>1</th>
+					<td>100</td>
+					<td>GOOD</td>
+					<td>TEST</td>
+					<td>100</td>
+					<td>1st Jan 2018</td>
+					<td>3rd May 2018</td>
+					<td>APPLE</td>
+					<td>GOOD</td>
+					<td>TEST</td>
+					<td>100</td>
+					<td>1st Jan 2018</td>
+					<td>3rd May 2018</td>
+					<td>APPLE</td>
+				</tr>
+				<tr data-status="ready">
+					<th scope="row">9</th>
+					<td>103</td>
+					<td>S</td>
+					<td>BMW</td>
+					<td>BERKLY</td>
+					<td>1000000</td>
+					<td>92.43</td>
+					<td class="status">Ready</td>
+					<th>1</th>
+					<td>100</td>
+					<td>GOOD</td>
+					<td>TEST</td>
+					<td>100</td>
+					<td>1st Jan 2018</td>
+					<td>3rd May 2018</td>
+					<td>APPLE</td>
+					<td>GOOD</td>
+					<td>TEST</td>
+					<td>100</td>
+					<td>1st Jan 2018</td>
+					<td>3rd May 2018</td>
+					<td>APPLE</td>
+				</tr>
+				<tr data-status="working">
+					<th scope="row">10</th>
+					<td>100</td>
+					<td>B</td>
+					<td>AAPL</td>
+					<td>BOFA</td>
+					<td>1000</td>
+					<td>102.43</td>
+					<td class="status">Working</td>
+					<th>1</th>
+					<td>100</td>
+					<td>GOOD</td>
+					<td>TEST</td>
+					<td>100</td>
+					<td>1st Jan 2018</td>
+					<td>3rd May 2018</td>
+					<td>APPLE</td>
+					<td>GOOD</td>
+					<td>TEST</td>
+					<td>100</td>
+					<td>1st Jan 2018</td>
+					<td>3rd May 2018</td>
+					<td>APPLE</td>
+				</tr>
+				<tr data-status="backOffice">
+					<th scope="row">11</th>
+					<td>101</td>
+					<td>B</td>
+					<td>AA</td>
+					<td>CHASE</td>
+					<td>100</td>
+					<td>12.43</td>
+					<td class="status">Back Office</td>
+					<th>1</th>
+					<td>100</td>
+					<td>GOOD</td>
+					<td>TEST</td>
+					<td>100</td>
+					<td>1st Jan 2018</td>
+					<td>3rd May 2018</td>
+					<td>APPLE</td>
+					<td>GOOD</td>
+					<td>TEST</td>
+					<td>100</td>
+					<td>1st Jan 2018</td>
+					<td>3rd May 2018</td>
+					<td>APPLE</td>
+				</tr>
+				<tr data-status="ready">
+					<th scope="row">12</th>
+					<td>103</td>
+					<td>S</td>
+					<td>BMW</td>
+					<td>BERKLY</td>
+					<td>1000000</td>
+					<td>92.43</td>
+					<td class="status">Ready</td>
+					<th>1</th>
+					<td>100</td>
+					<td>GOOD</td>
+					<td>TEST</td>
+					<td>100</td>
+					<td>1st Jan 2018</td>
+					<td>3rd May 2018</td>
+					<td>APPLE</td>
+					<td>GOOD</td>
+					<td>TEST</td>
+					<td>100</td>
+					<td>1st Jan 2018</td>
+					<td>3rd May 2018</td>
+					<td>APPLE</td>
 				</tr>
 			</tbody>
 			<!--Table body-->
 
 		</table>
 		<!--Table-->
+
 	</div>
 	<!-- context menus -->
+
+
 </body>
 </html>
