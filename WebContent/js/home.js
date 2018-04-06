@@ -11,10 +11,6 @@ $(document).ready(function() {
 
 // Sort table using columns
 
-$(document).ready(function() {
-	$("#table1").tablesorter();
-});
-
 // Button Filter
 $(document).ready(function() {
 $('.btn-filter').on('click', function () {
@@ -57,7 +53,8 @@ $(function(){
         selector: 'tr', 
         callback: function(key, options) {
             var m = "clicked: " + key + " on " + $(this).text();
-            window.console && console.log(m) || alert(m); 
+            $("#error").html(m);
+            $('#myModal').modal("show"); 
         },
         items: {
             "edit": {name: "Edit", icon: "edit"},
@@ -71,12 +68,6 @@ $(function(){
     });
 });
 
-// change css
-/*$("#dark").click(function () {
-    $("#dark").removeClass("navbar-inverse");
-    $(this).addClass("navbar-default");    
-    alert("hello");
-});*/
 $(document).ready(function() {
 	$("#light").click(function() {
 		$("#navbar").removeClass("navbar-inverse").addClass("navbar-default");
@@ -86,20 +77,25 @@ $(document).ready(function() {
 		$("#navbar").removeClass("navbar-default").addClass("navbar-inverse");
 		$("#table-header").removeClass("thead-light").addClass("thead-dark");
 	});
-	$('#table1').DataTable({
-		"searching" : false,
-		"paging" : false,
-		"info" : false,
-		"dom" : 'Zlfrtip',
-		fixedHeader : true,
+	var table = $('#table1').DataTable({
+		"scrollX":true,
+		"scrollY": 300,
+		"dom" : 'BZtlp',
+		//fixedHeader : true,
 		"colResize" : {
 			"tableWidthFixed" : false
 		},
-		dom: 'Bfrtip',
+		colReorder: true,
         buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
+            'copy', 'csv', 'excel', 'pdf', 'print',
+            {
+            	extend:'colvis',
+            	text:'<i class="fas fa-plus"></i>',
+            }
+        ],
 	});
+	
 
 });
+
 
