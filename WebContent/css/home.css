@@ -19,9 +19,8 @@
 .container{
 	margin-left:inherit;
 	margin-right:inherit;
-	min-height:100%;
-	min-width:100%;
-	resize:both;
+	height:100%;
+	width:100%;
 	overflow: auto;
 	
 }
